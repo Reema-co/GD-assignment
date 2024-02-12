@@ -9,7 +9,11 @@ public class NewBehaviourScript : MonoBehaviour
     Vector3 RightMove = new Vector3(0, 0, -0.1f);
     Vector3 leftMove = new Vector3(0, 0, 0.1f);
 
-     void FixedUpdate()
+    Vector3 Upwards = new Vector3(0,1,0);
+    Vector3 Downwards = new Vector3(0, -1, 0);
+
+
+    void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
@@ -28,5 +32,13 @@ public class NewBehaviourScript : MonoBehaviour
             transform.position += leftMove;
         }
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.position += Upwards;
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            transform.position += Downwards;
+        }
     }
 }
