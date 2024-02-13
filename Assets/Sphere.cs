@@ -6,6 +6,11 @@ using UnityEngine.UIElements;
 public class NewScript : MonoBehaviour
 {
     public float bulletSpeed = 1f;
+
+    private void Awake()
+    {
+        Destroy(gameObject, 5.0f);
+    }
     // Start is called before the first frame update
     void Start()
     {
