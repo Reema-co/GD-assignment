@@ -11,6 +11,7 @@ public class Assignment5 : MonoBehaviour
 
 
     public Rigidbody FristRigidBody;
+
     public void Awake()
     {
         FristRigidBody = GetComponent<Rigidbody>();

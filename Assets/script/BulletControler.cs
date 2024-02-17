@@ -28,14 +28,33 @@ public class    Sphere : MonoBehaviour
 {
     [SerializeField] private float m_speed;
     [SerializeField] private float m_lifetime;
+    [SerializeField] private string m_ignoredTag;
+
+    public Rigidbody FristRigidBody;
+
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, m_lifetime);
+        FristRigidBody = GetComponent<Rigidbody>();
+
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-       transform.position += Vector3.forward * m_speed * Time.deltaTime;
+        //transform.position += Vector3.forward * m_speed;
+        FristRigidBody.velocity = Vector3.forward * m_speed;
+
     }
+
+    private void OnCollisionEnter(Collision collision)
+
+    {
+        if (collision.gameObject.tag != m_ignoredTag)
+        {
+            Destroy(GameObject);
+        }
+    }
+
+
 }
