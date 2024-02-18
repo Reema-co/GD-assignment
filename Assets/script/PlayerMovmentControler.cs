@@ -20,27 +20,33 @@ public class PlayerMovmentControler : MonoBehaviour
 
     private void FixedUpdate()
     {
+        bool moving = true;
 
         if (Input.GetKey(KeyCode.UpArrow)) {
             FristRigidBody.velocity = Vector3.forward * speed;
+            moving = true;
         }
 
         if (Input.GetKey(KeyCode.DownArrow)) {
             FristRigidBody.velocity = Vector3.back * speed;
+            moving = true;
+
         }
 
         if (Input.GetKey(KeyCode.RightArrow)) { 
                 FristRigidBody.velocity = Vector3.right * speed;
+            moving = true;
+
         }
 
         if (Input.GetKey(KeyCode.LeftArrow)) { 
                 FristRigidBody.velocity = Vector3.left * speed;
+            moving = true;
+
         }
-        if (Input.GetKey(KeyCode.Space))
-        {
-
+        if (Input.GetKey(KeyCode.Space)){
             FristRigidBody.velocity = Vector3.up * speed;
-
+            moving = true;
         }
 
     }

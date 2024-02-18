@@ -7,6 +7,8 @@ public class BulletControler : MonoBehaviour
 {
     [SerializeField] private float m_speed;
     [SerializeField] private float m_lifetime;
+    [SerializeField] private string m_ignoreTag;
+
      Rigidbody m_RigidBody;
 
 
@@ -25,5 +27,13 @@ public class BulletControler : MonoBehaviour
         // transform.position += Vector3.forward * m_speed
       m_RigidBody.velocity = Vector3.forward * m_speed;
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == m_ignoreTag)
+        {
+            Destroy(gameObject);
+        }
     }
 }
