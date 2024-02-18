@@ -8,23 +8,23 @@ public class enemycontroler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-}
 
 
 
-private void OnCollisionEnter(Collision collision)
-{
-    if (colision.gameObject.tag != "Player")
+    private void OnCollisionEnter(Collision collision)
+
     {
-        Destroy(GameObject);
+        if (collision.gameObject.tag == "PlayerBullet")
+        {
+            Destroy(gameObject);
+        }
     }
 }
-

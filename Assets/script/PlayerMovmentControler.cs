@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Assignment5 : MonoBehaviour
+public class PlayerMovmentControler : MonoBehaviour
 {
     Vector3 forward = new Vector3(0, 0, 1.0f);
     Vector3 Backward = new Vector3(0, 0, -1.0f);
@@ -10,34 +10,38 @@ public class Assignment5 : MonoBehaviour
     Vector3 left = new Vector3(-1.0f,0);
 
 
-    public Rigidbody FristRigidBody;
+    private Rigidbody FristRigidBody;
+    private float  speed = 10.0f;
 
-    public void Awake()
+    private void Awake()
     {
         FristRigidBody = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
-        {
-            if (Input.GetKey(KeyCode.UpArrow))
-                FristRigidBody.velocity = Vector3.forward;
+
+        if (Input.GetKey(KeyCode.UpArrow)) {
+            FristRigidBody.velocity = Vector3.forward * speed;
         }
 
-        {
-            if (Input.GetKey(KeyCode.DownArrow))
-                FristRigidBody.velocity = Vector3.back;
+        if (Input.GetKey(KeyCode.DownArrow)) {
+            FristRigidBody.velocity = Vector3.back * speed;
         }
 
-        {
-            if (Input.GetKey(KeyCode.RightArrow))
-                FristRigidBody.velocity = Vector3.right;
+        if (Input.GetKey(KeyCode.RightArrow)) { 
+                FristRigidBody.velocity = Vector3.right * speed;
         }
-        {
-            if (Input.GetKey(KeyCode.LeftArrow))
-                FristRigidBody.velocity = Vector3.left;
+
+        if (Input.GetKey(KeyCode.LeftArrow)) { 
+                FristRigidBody.velocity = Vector3.left * speed;
         }
+        if (Input.GetKey(KeyCode.Space))
+        {
+
+            FristRigidBody.velocity = Vector3.up * speed;
+
+        }
+
     }
-
 }
-

@@ -14,6 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
 
 
     void FixedUpdate()
+
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
@@ -22,23 +23,29 @@ public class NewBehaviourScript : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.position += BackourdMove;
+
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += RightMove;
+
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += leftMove;
+
         }
 
         if (Input.GetKey(KeyCode.Space))
         {
             transform.position += Upwards;
+
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
             transform.position += Downwards;
+
         }
+        
     }
 }
