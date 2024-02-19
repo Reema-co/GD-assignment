@@ -7,14 +7,16 @@ public class EnemyShootingControler : MonoBehaviour
 {
     [SerializeField] private GameObject my_GameObject;
     [SerializeField] private float m_shootingRate;
-
+    [SerializeField] private EnemyData EnemyData;
+ 
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Shoot", 0.0f, m_shootingRate);
+        //InvokeRepeating("Shoot", 0.0f, m_shootingRate);
+
     }
 
 
