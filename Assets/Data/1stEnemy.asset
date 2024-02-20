@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72fc093b1b2144b259b14ae86c9a490f, type: 3}
   m_Name: 1stEnemy
   m_EditorClassIdentifier: 
+  delayBetweenBullet: 0
+  speed: 0
