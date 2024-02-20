@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManger : MonoBehaviour
 {
-    public void PauseGame ()
+    public void PauseGame()
     {
         Time.timeScale = 0;
 

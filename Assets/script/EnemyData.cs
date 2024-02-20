@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Inteygrify/EnemyData")]
+
+[CreateAssetMenu(menuName = "SDA/EnemyData")]
 
 
-    public class EnemyData : ScriptableObject
-    {
-        public float delayBetweenBullet;
-        public float speed;
-    }
+public class EnemyData : ScriptableObject
+{
+    public float ShootingRate;
+    public float BulletSpeed;
+}
 

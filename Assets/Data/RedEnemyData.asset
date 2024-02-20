@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72fc093b1b2144b259b14ae86c9a490f, type: 3}
-  m_Name: 1stEnemy
+  m_Name: RedEnemyData
   m_EditorClassIdentifier: 
-  ShootingRate: 2
-  BulletSpeed: 10
+  ShootingRate: 5
+  BulletSpeed: 20

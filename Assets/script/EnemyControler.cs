@@ -18,9 +18,14 @@ public class enemycontroler : MonoBehaviour
         m_scoreCounter = FindObjectOfType<ScoreCounter>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private IEnumerator MovementCoroutine()
     {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        while (true) for (int i = 0; i < 200; i++)
+            {
+                rb.velo
+                }
 
     }
 

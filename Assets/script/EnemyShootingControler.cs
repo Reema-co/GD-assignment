@@ -6,29 +6,40 @@ using UnityEngine.UIElements;
 public class EnemyShootingControler : MonoBehaviour
 {
     [SerializeField] private GameObject my_GameObject;
-    [SerializeField] private float m_shootingRate;
-    [SerializeField] private EnemyData EnemyData;
+    //[SerializeField] private float m_shootingRate;
+    [SerializeField] private EnemyData m_enemyData;
 
 
+    private Coroutine m_corouine;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         //InvokeRepeating("Shoot", 0.0f, m_shootingRate);
-        StartCoroutine(MyCoroutine(5.0f));
+        //InvokeRepeating("Shoot", 0.0f, EnemyData.ShootingRate);
+        StartCoroutine(ShootingCoroutine(5.0f));
+    }
 
-    }
-    private IEnumerator MyCoroutine(float time)
+
+    private IEnumerator ShootingCoroutine(float time)
     {
-    Debug.Log ("begin waiting for 5 seconds");
-        yield return new WaitForSeconds(time);
-    Debug.Log ("Done waiting for 5 seconds");
+        while (true)
+            for (int i = 0; i < 3; i++)
+            {
+                Shoot();
+                yield return new WaitForSeconds(0.3f);
+            }
+        Shoot();
+        yield return new WaitForSeconds(m_enemyData.ShootingRate);
+        Debug.Log("begin waiting for 5 seconds");
+        Debug.Log("Done waiting for 5 seconds");
     }
+
 
     private void Shoot()
     {
-        Instantiate(my_GameObject, transform.position, Quaternion.identity);
+        GameObject newBullet = Instantiate(my_GameObject, transform.position, Quaternion.identity);
+        newBullet.GetComponent<BulletControler>().Init(m_enemyData.BulletSpeed);
 
     }
 }
