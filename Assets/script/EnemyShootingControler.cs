@@ -8,7 +8,7 @@ public class EnemyShootingControler : MonoBehaviour
     [SerializeField] private GameObject my_GameObject;
     [SerializeField] private float m_shootingRate;
     [SerializeField] private EnemyData EnemyData;
- 
+
 
 
 
@@ -16,9 +16,15 @@ public class EnemyShootingControler : MonoBehaviour
     void Start()
     {
         //InvokeRepeating("Shoot", 0.0f, m_shootingRate);
+        StartCoroutine(MyCoroutine(5.0f));
 
     }
-
+    private IEnumerator MyCoroutine(float time)
+    {
+    Debug.Log ("begin waiting for 5 seconds");
+        yield return new WaitForSeconds(time);
+    Debug.Log ("Done waiting for 5 seconds");
+    }
 
     private void Shoot()
     {
