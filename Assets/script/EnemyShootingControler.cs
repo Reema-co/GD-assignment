@@ -25,17 +25,19 @@ public class EnemyShootingControler : MonoBehaviour
     private IEnumerator ShootingCoroutine(float time)
     {
         while (true)
+        {
             for (int i = 0; i < 3; i++)
             {
                 Shoot();
                 yield return new WaitForSeconds(0.3f);
             }
-        /*{
+
             Shoot();
             yield return new WaitForSeconds(m_enemyData.ShootingRate);
             Debug.Log("begin waiting for 5 seconds");
             Debug.Log("Done waiting for 5 seconds");
-        }*/
+        }
+
     }
 
 
