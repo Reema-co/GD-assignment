@@ -17,6 +17,7 @@ public class EnemyShootingControler : MonoBehaviour
     {
         //InvokeRepeating("Shoot", 0.0f, m_shootingRate);
         //InvokeRepeating("Shoot", 0.0f, EnemyData.ShootingRate);
+
         StartCoroutine(ShootingCoroutine(5.0f));
     }
 
@@ -29,10 +30,12 @@ public class EnemyShootingControler : MonoBehaviour
                 Shoot();
                 yield return new WaitForSeconds(0.3f);
             }
-        Shoot();
-        yield return new WaitForSeconds(m_enemyData.ShootingRate);
-        Debug.Log("begin waiting for 5 seconds");
-        Debug.Log("Done waiting for 5 seconds");
+        /*{
+            Shoot();
+            yield return new WaitForSeconds(m_enemyData.ShootingRate);
+            Debug.Log("begin waiting for 5 seconds");
+            Debug.Log("Done waiting for 5 seconds");
+        }*/
     }
 
 

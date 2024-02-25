@@ -6870,6 +6870,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myGameObject: {fileID: 7990226514839610327, guid: 2640a04863c8b4d61adbbcfe281855c1, type: 3}
+  m_shootingRate: 0
+  m_BulletSpeed: 0
+  PauseController: {fileID: 0}
 --- !u!114 &1817013192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7147,6 +7150,7 @@ GameObject:
   - component: {fileID: 2111166385}
   - component: {fileID: 2111166384}
   - component: {fileID: 2111166383}
+  - component: {fileID: 2111166387}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -7242,6 +7246,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 494406016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2111166387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111166382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8053a2b0b4047494a8a5406d6131c95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 1
+  distanceFromCenter: 2
+  rotationAxis: {x: 0, y: 1, z: 0}
 --- !u!1 &2121798566
 GameObject:
   m_ObjectHideFlags: 0

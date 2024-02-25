@@ -10,7 +10,7 @@ public class ScoreCounter : MonoBehaviour
 
     private int m_counter;
 
-    public void IncreaseCounter ()
+    public void IncreaseCounter()
     {
         ++m_counter;
         m_text.text = m_counter.ToString();

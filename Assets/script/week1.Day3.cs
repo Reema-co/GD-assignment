@@ -9,7 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
     Vector3 RightMove = new Vector3(0, 0, -0.1f);
     Vector3 leftMove = new Vector3(0, 0, 0.1f);
 
-    Vector3 Upwards = new Vector3(0,1,0);
+    Vector3 Upwards = new Vector3(0, 1, 0);
     Vector3 Downwards = new Vector3(0, -1, 0);
 
 
@@ -46,6 +46,6 @@ public class NewBehaviourScript : MonoBehaviour
             transform.position += Downwards;
 
         }
-        
+
     }
 }

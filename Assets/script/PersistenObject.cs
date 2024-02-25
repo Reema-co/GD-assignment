@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PersistenObject : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        StartCoroutine();
+        StartCoroutine(LaodLevelLater());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator LaodLevelLater()
     {
-
+        yield return new WaitForSeconds(10.0f);
+        SceneManager.LoadScene("");
     }
 }
