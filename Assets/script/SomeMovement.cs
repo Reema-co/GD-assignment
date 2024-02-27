@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class SomeMovement : MonoBehaviour
 {
     Vector3 forwardMove = new Vector3(0.2f, 0, 0);
     Vector3 BackourdMove = new Vector3(-0.1f, 0, 0);
