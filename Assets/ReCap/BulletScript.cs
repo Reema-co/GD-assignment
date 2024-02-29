@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    private Rigidbody myRigidbody;
     void Start()
     {
+        myRigidbody = GetComponent<Rigidbody>();
+
         Destroy(gameObject, 1f);
     }
 
     void Update()
     {
-        transform.position += Vector3.forward;
+        myRigidbody.velocity += Vector3.forward;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        //Debug.Log("hello");
+        Destroy(gameObject);
+        Destroy(collision.gameObject);
+        if ()
     }
 }

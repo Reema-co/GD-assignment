@@ -7,8 +7,11 @@ using UnityEngine.Scripting.APIUpdating;
 public class Player : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
+    [SerializeField] Transform bulletSpawn;
+
 
     private Rigidbody myRigidbody;
+
 
     void Start()
     {
@@ -48,7 +51,7 @@ public class Player : MonoBehaviour
         // Here is How to Shooting
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
         }
 
         // Here is How to Jump
