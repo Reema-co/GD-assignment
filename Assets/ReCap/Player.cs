@@ -1,33 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
 
+    private Rigidbody myRigidbody;
+
+    void Start()
+    {
+        myRigidbody = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
+        bool moving = false;
+
+        //this is how to move more realistic
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += Vector3.forward;
+            myRigidbody.velocity += Vector3.forward;
+            moving = true;
+            //this is how to move non-realistic
             //transform.position = transform.position + Vector3.forward;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += Vector3.right;
+            myRigidbody.velocity += Vector3.right;
+            moving = true;
+
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += Vector3.left;
+            myRigidbody.velocity += Vector3.left;
+            moving = true;
+
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += Vector3.down;
+            myRigidbody.velocity += Vector3.back;
+            moving = true;
         }
+
+        // Here is How to Shooting
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(bullet, transform.position, Quaternion.identity);
+        }
+
+        // Here is How to Jump
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            myRigidbody.AddForce(Vector3.up * 7, ForceMode.Impulse);
+        }
+
+        if (moving == false)
+        {
+            myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y, 0);
         }
     }
 }
