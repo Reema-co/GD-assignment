@@ -21,7 +21,11 @@ public class BulletScript : MonoBehaviour
     {
         //Debug.Log("hello");
         Destroy(gameObject);
-        Destroy(collision.gameObject);
-        if ()
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+        }
+
     }
 }
