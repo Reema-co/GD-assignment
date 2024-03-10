@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
-using UnityEngine.Scripting.APIUpdating;
 
 public class Player : MonoBehaviour
 {
@@ -51,7 +49,8 @@ public class Player : MonoBehaviour
         // Here is How to Shooting
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+            // Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+            Shoot();
         }
 
         // Here is How to Jump
@@ -60,9 +59,16 @@ public class Player : MonoBehaviour
             myRigidbody.AddForce(Vector3.up * 7, ForceMode.Impulse);
         }
 
+        // this is how to make it stop moving 
         if (moving == false)
         {
             myRigidbody.velocity = new Vector3(0, myRigidbody.velocity.y, 0);
         }
+
+    }
+    private IEnumerator Shoot()
+    {
+        Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+
     }
 }
