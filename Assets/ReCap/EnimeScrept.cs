@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class EnimeScrept : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform bulletSpawn;
+
     void Start()
     {
-        
+        StartCoroutine(Shoot());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    private IEnumerator Shoot()
+    {
+
+        while (true)
+        {
+            Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+            yield return new WaitForSeconds(1f);
+        }
+
     }
 }

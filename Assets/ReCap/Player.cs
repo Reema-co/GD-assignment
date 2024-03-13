@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
-            Shoot();
+            StartCoroutine(Shoot());
         }
 
         // Here is How to Jump
@@ -66,9 +66,14 @@ public class Player : MonoBehaviour
         }
 
     }
+    //how to make the player shoot and wait between everyy shooting
     private IEnumerator Shoot()
     {
         Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
-
+        yield return new WaitForSeconds(0.25f);
+        Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.25f);
+        Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.25f);
     }
 }
